@@ -1,0 +1,21 @@
+.App {
+  position: relative;
+  top: 0;
+  right: 0;
+  /* background: #dadada; */
+  background: red;
+}
+
+.App .App-header {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+}
+
+.App .App-content {
+  position: absolute;
+  top: calc(20px + 5vh);
+  /* top: 50px; */
+  bottom: 0px;
+  width: 100%;
+}

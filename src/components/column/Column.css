@@ -1,0 +1,8 @@
+.Column {
+    display: flex;
+    /* height: 100%; */
+}
+
+.Column .Column-item {
+    flex: 1;
+}
