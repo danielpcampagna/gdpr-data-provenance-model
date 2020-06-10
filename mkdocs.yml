@@ -1,5 +1,6 @@
-site_name: GDPR data provenance model
+site_name: GDPR Data Provenance Model
 theme: readthedocs
 nav:
-    - Welcome: index.md
+    - Introduction: index.md
     - GDPR Data Provenance Model: gdpr-data-provenance-model.md
+    - Design Patterns: design-patterns.md
