@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>GDPR Data Provenance Model</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Introduction";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> GDPR Data Provenance Model</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Introduction</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#provenance-background">Provenance Background</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="gdpr-data-provenance-model/">GDPR Data Provenance Model</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="design-patterns/">Design Patterns</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">GDPR Data Provenance Model</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Introduction</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><link href="/css/styles.css" rel="stylesheet" /></p>
+<h1 id="introduction">Introduction</h1>
+<p>Since GDPR came into force, developement teams have been forced to seek for technics to ensure compliance with GDPR requirements. Into a large number of approaches, a branch have been proposed solutions for this compliances challages by using a GDPR data provenance model.</p>
+<p>In this documentation, we intend to gather:</p>
+<ul>
+<li>a brief to the GDPR data provenance model proposed by Ujcich, Bates, and Sanders (2018);</li>
+<li>some analysis from original GDPR text that contribute for;</li>
+<li>extensions and improvements for that model; and</li>
+<li>finally, design patterns which explain who to use that model based in case studies.</li>
+</ul>
+<h2 id="provenance-background">Provenance Background</h2>
+<div class="quote">
+    <p>
+        The source or origin of an object; its history and pedigree; a record of the ultimate derivation and passage of an item through its various owners.
+    </p>
+    <span>
+        Pronance definition by Oxford English Dictionary.
+    </span>
+</div>
+
+<p>In the literature, provenance mechanisms have been used to aid in meeting these requirement. Usually, provenance has been used in e-science contexts to help in tasks related to the interpretation and understanding of results, in reason to capture a set of processing steps that a piece of data has been submitted to.</p>
+<p>The World Wide Web Consortium (W3C) describes the PROV, a family of documents that proprose standardizations and concepts for a provenance model. The PROV defines provenance as <em>"information about entities, activities, and people involved in producing a piece of data or thing, which can be used to form assessments about its quality, reliability, or trustworthiness."</em></p>
+<p>The PROV conceptual data model (PROV-DM) gathers provenance concepts (types and relations) into six components. Those components supply a vocabulary to describe provenance. For the proposes of this documents, we highlight the following three concepts:</p>
+<ul>
+<li>
+<p><strong>entity</strong> &#8212; <em>"a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary [...]."</em></p>
+</li>
+<li>
+<p><strong>activity</strong> &#8212; <em>"something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."</em></p>
+</li>
+<li>
+<p><strong>agent</strong> &#8212; <em>"something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity."</em></p>
+</li>
+</ul>
+<p>These three concepts could be comprehended as vertices of the provenance graph, while the remaining main concepts (relations) are edges that connect these vertices, as shown in <a href="#Figure1">Figure 1</a>.</p>
+<div id="Figure1" style="text-align:center;font-weight:900">
+    <img src="/img/PROV.svg">
+    <p class="caption">
+        Figure 1: The PROV conceptual data model. House symbols represent agents; rectangles represent activities; ellipses represent entities; arrows represent relations; notes (in white) represent other properties
+    </p>
+</div>
+
+<!-- ## Related Work
+
+[Under Construction]
+
+We ahve work to introduce here the GDPRrov, GConsent, and GPDRtEXT provenance model.
+We also approach the prior works that involve data privacy and protection with provenance. -->
+
+<!--
+## References
+
+### Footnotes
+
+[1#ujcich2018provenance] ujcich2018provenance 
+
+[#aldeco2008provenance] aldeco2008provenance
+
+[martin2012provenance] martin2012provenance
+
+[#bartolini2015using] bartolini2015using
+-->
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gdpr-data-provenance-model/" class="btn btn-neutral float-right" title="GDPR Data Provenance Model">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="gdpr-data-provenance-model/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.1.2
+Build Date UTC : 2020-06-10 19:45:55.071049+00:00
+-->
